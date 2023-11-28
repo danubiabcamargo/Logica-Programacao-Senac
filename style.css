@@ -1,0 +1,30 @@
+*{
+    padding: 0 auto;
+    margin: 0 auto;
+}
+body{
+    background-color: rgb(197, 194, 194);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    background-color: gray;
+    width: 30%;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+}
+ul li a{
+    text-decoration: none;  
+    color: black; 
+    
+}
+li{
+    list-style-type: none;
+}
+ul{
+    padding-top: 20px;
+}
+a:hover{
+    background-color: yellow;
+    padding: 2px;
+}
