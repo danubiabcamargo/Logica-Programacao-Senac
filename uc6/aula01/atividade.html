@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Média</title>
+</head>
+<body>
+    <h1>Atividade 01  </h1>
+    <h2>Calculadora de Média</h2>
+    <h2>Informe as médias do aluno: </h2>
+
+    <input type="number" id="nt1" placeholder="Digite a Primeira Nota"/>
+    <input type="number" id="nt2" placeholder="Digite a Segunda Nota"/>
+    <input type="number" id="nt3" placeholder="Digite a Terceira Nota"/>
+    <input type="number" id="nt4" placeholder="Digite a Quarta Nota"/>
+    <button onclick="resultado()"> Exibir Resultado</button> 
+
+    <script>
+        function resultado(){
+            var nota1 = document.getElementById("nt1").value;
+            var nota2 = document.getElementById("nt2").value;
+            var nota3 = document.getElementById("nt3").value;
+            var nota4 = document.getElementById("nt4").value;
+            alert("A soma de todas as notas: " + nota1 + nota2 + nota3 + nota4);
+            
+
+        }
+    </script>
+    
+</body>
+</html>
