@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 02 -  Variáveis e Tipos de Dados</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #tipo{
+            margin-top: 80px;
+            margin-left: 20px;
+        }
+
+        h2{
+            margin-left: 20px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h1>Aula 02 -  Variáveis e Tipos de Dados</h1>
+    <h2>Exemplo de variáveis</h2>
+    <code style="font-size: 20px;">
+        var idade = 25; <br>
+        let nome = "Danubia"; <br>  
+        const pi = 3.14; <br>      
+        tenhoGrana = 0 > 1;   <strong style="color: red;">//tipo booleano</strong> <br>
+        console.log(typeof(tenhoGrana));   <strong style="color: red;">//typeof = tipo de dado</strong> 
+
+    </code>
+
+    
+
+    <script>
+        //Declaração e atribuição de variáveis
+        var idade = 25;
+        let nome = "Danubia";  
+        const pi = 3.14;       
+        tenhoGrana = 0 > 1;   //tipo booleano
+        console.log(typeof(tenhoGrana));  //typeof = tipo de dado
+    </script>
+    
+
+    <h2 id="tipo">Tipos de Dados</h2>
+    <code style="font-size: 20px;">
+        let numeroInteiro = 42; <br> 
+        let numeroDecimal = 4.14; <br> 
+        let texto = "Isso é uma String"; <br> 
+        let booleano = true;
+
+    </code>
+    <script>
+        let numeroInteiro = 42;
+        let numeroDecimal = 4.14;
+        let texto = "Isso é uma String";
+        let booleano = true;
+
+    </script>
+
+
+
+    <h2>Operações com Variáveis</h2>
+    <code style="font-size: 20px;">
+        let x = 10; let y = 5;<br><br>
+
+        let soma = x + y;<br>
+        let subtracao = x - y;<br>
+        let multiplicacao = x * y;<br>
+        let divisao = x / y; <br> <br>
+
+        let idadeAtual = 20; <br>
+        <strong style="color: red;">//idadeAtual = idadeAtual + 5;  variavel vai receber ela msm jeito correto abaixo usando += </strong> <br>
+        idadeAtual += 5; <br><br>
+
+       console.log("Nova idade:" , idadeAtual); <br><br>
+
+       let restoDivisao = idadeAtual % 4;<br>
+       console.log("Resto da Divisão:", idadeAtual)  <strong style="color: red;">//resultado não confere porque não ocultei a idadeAtual </strong>
+
+    </code>
+    <script>
+        //Operações com Variáveis
+        let x = 10; let y = 5;
+
+        let soma = x + y;
+        let subtracao = x - y;
+        let multiplicacao = x * y;
+        let divisao = x / y;
+
+        console.log("Soma", soma);
+        console.log("Subtração", subtracao);
+        console.log("Multiplicação", multiplicacao);
+        console.log("Divisão", divisao);
+        
+        let idadeAtual = 20;
+         //idadeAtual = idadeAtual + 5;  variavel vai receber ela msm jeito correto abaixo usando +=
+         idadeAtual += 5;
+
+        console.log("Nova idade:" , idadeAtual);
+
+        let restoDivisao = idadeAtual % 4;
+        console.log("Resto da Divisão:", idadeAtual) //resultado não confere porque não ocultei a idadeAtual
+
+
+
+    </script>
+</body>
+</html>
