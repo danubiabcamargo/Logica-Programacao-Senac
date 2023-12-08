@@ -4,8 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 27px;
+        }
+
+
+        p {
+            margin-left: 27px;
+            font-size: 20px;
+        }
+
+        code {
+            font-size: 25px;
+            font-weight: 700;
+        }
+    </style>
 </head>
 <body>
-    <h2>Atividade - </h2>
+    <h1>Atividade - Funções</h1>
+
+    <h2> Crie uma função que sempre retorne o texto "Obrigado", para tornar suas frases</h2>
+
+    <pre>
+        <code>
+            function souEducado(){
+                return "Obrigado!";
+            }
+
+            let texto = prompt("Informe um texto, e eu o farei educado");
+            aler(texto + souEducado());
+        </code>
+    </pre>
+
+    <h2> Soma dois valores</h2>
+    <pre>
+        <code>
+            function soma(a,b){
+                document.write(`A soma dos dois valores é ${a+b}`);
+            }
+    
+            soma(5,7);
+
+        </code>
+    </pre>
+
+    <script>
+        //function souEducado(){
+          //  return " Obrigado!";
+
+        //}
+
+        //let texto = prompt("Informe um texto, e eu o farei educado");
+        //alert(texto + souEducado());
+
+            
+        //soma
+
+        function soma(a,b){
+            document.write(`A soma dos dois valores é ${a+b}`);
+        }
+
+        soma(5,7);
+
+
+    </script>
 </body>
 </html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Média</title>
+    <style>
+    body {
+            
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 27px;
+    }
+
+
+    p {
+        margin-left: 27px;
+        font-size: 20px;
+    }
+
+    code {
+        font-size: 25px;
+        font-weight: 700;
+    }
+</style>
+</head>
+<body>
+
+    
+    <h2>Calculadora de Média - Listas e Funções</h2>
+    <p>Atualize a atividade da primeira aula para que agora, o mesmo tenha uma lista para recebimento de todas as notas, <br> e uma função isolada que receba uma lista de valores e retorne a média dos mesmos</p>
+
+    <!--Pergunte o total de unidades estudadas pelo aluno-->
+
+    <h2>Informe as médias do aluno: </h2>
+
+
+
+    <script>
+        let unidadeMateria = parseInt(prompt("Digite a quantidade de Materia"));
+        for (let i = 1; i <= unidadeMateria ; i++){
+            document.write(`<label ${i}">Nota  ${i} : </label>`);
+            document.write(`<input type="number" id="materia${i}" required><br>`);
+
+        }
+
+        function botaoResultado() { 
+        let notas = []; // array de notas
+        for (let i = 1; i < unidadeMateria ; i++){
+            notas[i] = parseFloat(document.getElementById(`materia${i}`).value);
+                
+        }
+
+        window.alert(calcularMedia(notas));
+    
+    }
+
+    function calcularMedia(lista) {
+                var soma = 1;
+                for (var i = 1; i < lista.length; i++) {
+                    soma += lista[i];
+                }
+                return soma / lista.length;
+            }
+
+
+           
+
+    //deve ser uma função que recebe a lista, e calcula a média
+    </script>
+    <button onclick="botaoResultado()">Exibir Média</button>
+</body>
+</html>
