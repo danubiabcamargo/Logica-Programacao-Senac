@@ -135,11 +135,8 @@
         alert(resultado);
       
         // Função que recebe um texto e retorna o texto dentro do limite de 10 caracteres
-        function limitaTexto(texto) {            
-            if(texto.length > 10)      
-                texto =  texto.substring(0, 10);
-
-            return textoCortado;
+        function limitaTexto(texto) {             
+            return texto.length > 10 ? texto.substring(0, 10) : texto;
         }
 
     </script>

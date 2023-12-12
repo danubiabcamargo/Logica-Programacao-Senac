@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input {
+            width: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lista de Compras</h1>
+    <!-- criando input para receber produtos-->
+    <input type="text" id="itemInput" placeholder="Adicione um produto..."> <button onclick="adicionarItem()">Adicionar
+        Item</button>
+
+    <ul id="listaDeCompras">
+        <!--Itens aqui-->
+
+    </ul>
+
+    <p>Total de Itens: <span id="totalItens">0</span></p>
+
+
+    <script>
+        function adicionarItem() {
+            let itemInput = document.getElementById("itemInput").value;
+            let item = itemInput.trim();    //trim remove espaço do começo e do fim
+            let listaDeCompras = document.getElementById("listaDeCompras");
+
+            if (item !== "") {
+
+                //Criação de nova linha
+                let novaLinha = document.createElement("li");
+
+                //Botão de remoção
+                let botaoRemover = document.createElement("button");
+                botaoRemover.innerHTML = "Remover";
+                botaoRemover.onclick = function () {
+                    removerItem(novaLinha);
+                }
+
+                //Adição do botão antes do nome do item
+                novaLinha.appendChild(botaoRemover);
+
+                //Adição do nome do item
+                novaLinha.appendChild(document.createTextNode(item));
+
+                //Adicionar nova linha a lista de compras
+                listaDeCompras.appendChild(novaLinha);
+
+                atualizarTotalItens();
+
+
+
+            }
+
+        }
+
+        function removerItem(linha) {
+            let listaDeCompras = document.getElementById("listaDeCompras");
+            listaDeCompras.removeChild(linha);
+
+            atualizarTotalItens();
+        }
+
+        function atualizarTotalItens() {
+            let listaDeCompras = document.getElementById("listaDeCompras");
+            let totalItens = document.getElementById("totalItens");
+            totalItens.textContent = listaDeCompras.childElementCount;
+
+        }
+    </script>
+</body>
+
+</html>
