@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap'); 
+        *{
+            margin: 0 auto;
+            padding: 0 auto;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            background-color: green;
+            color: white;
+            padding-left: 20px;
+            margin-bottom: 35px;
+            padding: 15px;
+            font-family: 'Silkscreen', sans-serif;
+            font-size: 40px;
+        }
+
+        p{
+            margin-top: 20px;
+            margin-left: 15px;
+            border: 1px solid black;
+            border-radius: 10px;
+            width: 150px;
+            padding: 10px;
+        }
+
+        input{
+            margin-left: 15px;
+        }
+
+        button:hover{
+            background-color: brown;
+            color: white;
+            border: none;
+        }
+
+   
+    </style>
+</head>
+<body>
+    <h1>Lista de Compras</h1>
+
+    <input id="itemInput" type="text" placeholder="Digite um item..">
+    <button onclick="adicionarItem()">Adicionar Item</button>
+
+    <ul id="listaDeCompras">
+        <!--Lista ficará aqui-->
+    </ul>
+
+    <p>Total de Items: <span id="totalItems" style="color: red;">0</span></p>
+
+    <script>
+        let items = [];
+
+        function adicionarItem(){
+            let item = document.getElementById("itemInput").value.trim();
+
+            if(item !== ""){
+                items.push(item);
+                itemInput.value = "";
+                atualizarLista();  //código pronto e so chamou o atualizarLista 60
+                contadorItem();
+                
+            }
+           
+        }
+
+        function contadorItem(){
+            totalItems.innerHTML = items.length;
+        }
+
+        function atualizarLista(){
+            let listaDeCompras = document.getElementById("listaDeCompras");
+                listaDeCompras.innerHTML = "";
+
+                for(let i = 0; i < items.length; i++){
+                let novaLinha = document.createElement("li");
+                novaLinha.textContent = items[i];
+                listaDeCompras.appendChild(novaLinha);
+                }
+
+        }
+    </script>
+</body>
+</html>
