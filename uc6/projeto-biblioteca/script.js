@@ -5,6 +5,24 @@ class MaterialBibliografico {
         this.disponivel = true;
     }
 
+    realizarEmprestimo(){
+        if(this.disponivel == true){
+            this.disponivel = false;
+            return true; //Emprestimo realizado com sucesso
+        }else{
+            return false; // Material já emprestado
+        }
+    }
+
+    realizarDevolucao(){
+        if(!this.disponivel){ //! se não esta disponivel
+            this.disponivel = true;
+            return true; //devolução realizada com sucesso
+        }else{
+            return false;  //Material devolvido previamente
+        }
+    }
+
 
 }
 
