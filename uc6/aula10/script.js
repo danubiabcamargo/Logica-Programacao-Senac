@@ -16,6 +16,11 @@ lembre de criar o método construtor*/
     - so pode atacar alguém com vida
     - exibe o console.log informando qual a força do ataque e inimigo atacado
 
+    Exercício:
+    - Crie um limite de vida máxima para o personagem
+    - Crie uma função de recuperar vida que recebe um total de pontos para recuperar
+    - A recuperação de vida não pode fazer o personagem ir além da vida máxima
+
     */
 
 class personagem{
@@ -26,6 +31,7 @@ class personagem{
         this.defesa = defesa;
         this.vivo = vivo;
         this.posicao = posicao;
+        this.vidaMaxima = vida;
     }
 
     morreu(){
@@ -57,6 +63,32 @@ class personagem{
             console.log("Não é possível atacar, na condição de morto!");
         }
     }
+
+    recuperarVida(pontos){
+        this.vida += pontos;
+        
+        if(this.vida > this.vidaMaxima){
+            this.vida = this.vidaMaxima;
+            
+        }
+
+        console.log(`${this.nome} recuperou um total de ${pontos}, ficando com ${this.vida} de vida`);
+
+    }
+
+    /* recuperando uma vida de outro personagem
+
+        recuperarVida(vidaRecebida, personagem){
+        personagem.vida += vidaRecebida;        
+
+        if(personagem.vida > personagem.vidaMaxima) {
+            personagem.vida = personagem.vidaMaxima;
+        }
+
+        console.log(`${this.nome} recuperou a vida de ${personagem.nome} um total de ${vidaRecebida}, ficando com ${personagem.vida} de vida`);
+    }
+
+    */
 }
 
 
@@ -67,6 +99,14 @@ let personagem2 = new personagem("Matheus", 100,90,20,1);
 console.log(personagem1);
 console.log(personagem2);
 console.log(personagem1.atacar(personagem2));
+console.log(personagem2.recuperarVida(50));
+
+/* recuperação de outro personagem
+
+console.log(personagem1.recuperarVida(15, personagem2));
+
+*/
+
 
 
 
