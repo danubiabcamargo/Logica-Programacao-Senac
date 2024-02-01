@@ -14,7 +14,7 @@ Crie a função tomarDano
     - o personagem só pode tomar dano se estiver vivo
 
 Crie a função atacar
-    - atacar, recebe como parametro um personaem/inimigo
+    - atacar, recebe como parametro um personagem/inimigo
     - so pode atacar alguém com vida
     - exibe o console.log informando qual a força do ataque e inimigo atacado
 
@@ -42,6 +42,12 @@ Alterações do Arqueiro:
 
     - Crie a função recarregarFlehca, que recebe por parametro a quantidade a recarregar
     - A função deve retornar o total de flechas recarregadas.
+
+Alterações do Mago:
+    - O mago precisa de pontos de magia para atacar.
+    - Os pontos de magia do mago são inicialmente metade dos seus pontos de vida
+    - Ao atacar, o mago gasta 2 pontos de magia.
+    - Caso não haja mais pontos de magia, o mago perde 4 pontos de vida ao atacar.
 */
 
 class Personagem {
@@ -146,6 +152,8 @@ class Mago extends Personagem {
     constructor(nome, ataque, defesa, vida, posicao, vivo = true) {
         super(nome, ataque, defesa, vida, posicao, vivo)
     }
+
+    
 }
 
 let persoGuerreiro = new Guerreiro("Aragorn", 10, 12, 100, 5, true, 5);
