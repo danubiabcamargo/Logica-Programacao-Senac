@@ -62,7 +62,19 @@ function exibirVeiculos() {
 
     for (let i = 0; i < veiculos.length; i++) {
         const veiculoItem = document.createElement("li");
-        veiculoItem.innerHTML = veiculos[i].modelo;
+        const veiculoCard = criarVeiculoCard(veiculos[i]);
+        veiculosList.appendChild(veiculoCard);
         veiculosList.appendChild(veiculoItem);
     }
+}
+
+function criarVeiculoCard(veiculo){
+    const veiculoCard = document.createElement("div");
+    veiculoCard.className = "veiculo-card";
+
+    const imagemVeiculo = document.createElement("img");
+    imagemVeiculo.src = veiculo.imagemURL;
+    imagemVeiculo.className = "veiculo-imagem";
+    imagemVeiculo.alt = `${veiculo.marca} ${veiculo.modelo}`;
+    veiculoCard
 }
