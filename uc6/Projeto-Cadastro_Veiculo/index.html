@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="chave-do-carro.png">
 </head>
+
 <body>
     <header>
         <img src="logo.png" width="100px">
@@ -14,30 +16,37 @@
         <button> LOGIN</button>
     </header>
 
-    <section class="principal">
-        <img src="tcross.png">
-        <img src="tcross.png">
-        <img src="tcross.png">
-        <img src="tcross.png">
-    </section>
+ 
 
-    <div>
-        <p>Marca:</p>
-        <input type="text">
-        <p>Modelo:</p>
-        <input type="text">
-        <p>Ano:</p>
-        <input type="text">
-        <p>K/m:</p>
-        <input type="text">
-        <p>Valor</p>
-        <input type="text">
-        <p>Modelo:</p>
-        <input type="text">
-        <br><br>
-        <button>Cadastrar Veículo</button>
-    </div>
-    
+    <form id="veiculoForm">
+        <label for="marca">Marca:</label>
+        <input type="text" id="marca" required>
+
+        <label for="modelo">Modelo:</label>
+        <input type="text" id="modelo" required>
+
+        <label for="preco">Preço:</label>
+        <input type="text" id="preco" required>
+
+        <label for="cor">Cor:</label>
+        <input type="text" id="cor" required>
+
+        <label for="autonomia">Autonomia por Litro:</label>
+        <input type="text" id="autonomia" required>
+
+        <label for="capacidadeTanque">Capacidade do Tanque:</label>
+        <input type="text" id="capacidadeTanque" required>
+
+        <label for="imagemURL">Link da Imagem:</label>
+        <input type="text" id="imagemURL" required>
+
+        <button type="button" onclick="cadastrarVeiculo()">Cadastrar Veiculo</button>
+    </form>
+
+    <h2>Veículos Cadastrados</h2>
+    <ul id="veiculosList"></ul>
+
     <script src="script.js"></script>
 </body>
+
 </html>
