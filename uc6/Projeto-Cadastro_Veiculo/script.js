@@ -8,9 +8,14 @@
 
 #Parte 2:
     - Crie uma função cadastrarVeiculo
+
+#Exercício:
+    - Adicione ao veículo um anoDeFabricacao
+    - Adicione uma função que retorne se o veículo é isento de IPVA naquele ano.
+    - Utilize o Date().getFullYear();
 */
 class Veiculo {
-    constructor(marca, modelo, preco, cor, autonomia, capacidadeTanque, imagemURL) {
+    constructor(marca, modelo, preco, cor, autonomia, capacidadeTanque, imagemURL, anoDeFabricacao) {
         this.marca = marca;
         this.modelo = modelo;
         this.preco = preco;
@@ -18,6 +23,7 @@ class Veiculo {
         this.autonomia = autonomia;
         this.capacidadeTanque = capacidadeTanque;
         this.imagemURL = imagemURL;
+        this.anoDeFabricacao = anoDeFabricacao;
     }
 
     calcularDistanciaMaxima() {
@@ -26,6 +32,11 @@ class Veiculo {
 
     exibirDetalhes() {
         return `${this.marca} ${this.modelo} - ${this.cor} - R$ ${this.preco.toFixed(2)}`;
+    }
+
+    anoDeFabricacao(){
+        let ano = new Date;
+        ano = ano.getFullYear();
     }
 }
 
@@ -76,5 +87,11 @@ function criarVeiculoCard(veiculo){
     imagemVeiculo.src = veiculo.imagemURL;
     imagemVeiculo.className = "veiculo-imagem";
     imagemVeiculo.alt = `${veiculo.marca} ${veiculo.modelo}`;
-    veiculoCard
+    veiculoCard.appendChild(imagemVeiculo);
+
+    const detalhesVeiculo = document.createElement("div");
+    detalhesVeiculo.textContent = veiculo.exibirDetalhes() + ` - Distância máxima: ${veiculo.calcularDistanciaMaxima()} km`;
+    veiculoCard.appendChild(detalhesVeiculo);
+
+    return veiculoCard;
 }
